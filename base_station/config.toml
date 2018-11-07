@@ -1,0 +1,37 @@
+log = "info"
+
+# [source]
+# type = "serial"
+# version = 1
+# baud_rate = 921600
+# data_bits = "8"
+# stop_bits = "1"
+# parity = "none"
+# flow_control = "none"
+
+[source]
+type = "serial"
+version = 2
+baud_rate = 460800
+data_bits = "8"
+stop_bits = "1"
+parity = "none"
+flow_control = "hardware"
+
+# [source]
+# type = "file"
+# path = "measurements.jsonl"
+# repeat = true
+
+[[destination]]
+type = "http"
+endpoint = "http://127.0.0.1:8081/api/instance/test/beacon_measurement"
+retry_attempts = 0
+queue_rate_ms = 200
+
+[[destination]]
+type = "stdout"
+
+# [[destination]]
+# type = "file"
+# path = "measurements.jsonl"
