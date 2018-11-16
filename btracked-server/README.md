@@ -11,7 +11,7 @@ Responsible for hosting the web-ui, storing map data and configuration, and mana
     1. Navigate to the `web-ui` directory.
     2. Run `(yarn|npm) install`
     3. Run `(yarn|npm) dist`
-    4. Copy the content of `web-ui/build` to `btracked-server/
+    4. Copy the content of `web-ui/build` to `btracked-server/resources`
 
 3. Create the database:
 

@@ -14,11 +14,8 @@ First, we develop the concept of *generic sensor models* for generalized indoor 
 ### Beacon setup
 
 1. Build and configure the `base_station` software, (see: [base_station](./base_station) for more details).
-
 2. Deploy base-stations.
-
 3. Configure and deploy beacons.
-
 
 ### Server setup
 
