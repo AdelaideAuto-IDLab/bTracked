@@ -1,0 +1,55 @@
+{
+    "motion": {
+      "kinematic_noise": 0.5,
+      "pose_noise": 0.1,
+      "transition_prob": 0.1,
+      "turn_rate_noise": 0.05
+    },
+    "num_particles": 10000,
+    "reinit_ratio": 0.5,
+    "reinit_threshold": 0.000001,
+    "signal": [
+      {
+        "alpha": 2.5386955550662837,
+        "beta": -80.71102216668632,
+        "gain_table": {
+          "horizontal": [
+            -0.959708918,
+            -1.111820469,
+            -1.520971502,
+            -2.114455356,
+            -2.818397264,
+            -3.576399047,
+            -4.478358854,
+            -5.541337503,
+            -6.695433653,
+            -7.874520046,
+            -9.050584531,
+            -10.28953177,
+            -11.62078789,
+            -13.02371494,
+            -14.48680102,
+            -15.9943064,
+            -17.5465796,
+            -19.15009267,
+            -20.8148601,
+            -22.54986
+          ],
+          "vertical": [
+            0
+          ]
+        },
+        "noise": 6
+      }
+    ],
+    "speed": 0.5,
+    "stationary": {
+      "kinematic_noise": 0.5,
+      "pose_noise": 0.1,
+      "transition_prob": 0.1,
+      "turn_rate_noise": 0.1
+    },
+    "turn_rate_mean": 0.1,
+    "turn_rate_stddev": 0.5,
+    "update_rate_ms": 200
+  }
