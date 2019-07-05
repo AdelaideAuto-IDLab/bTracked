@@ -66,7 +66,7 @@ impl World {
         for wall in &self.walls {
             match support_map_against_support_map(&point, &query_ball, &wall.1, &wall.0, 0.3) {
                 Some(ref contact) if contact.depth > max_depth => {
-                    normal = contact.normal.unwrap();
+                    normal = contact.normal.into_inner();
                     max_depth = contact.depth;
                 },
                 _ => {}
@@ -76,7 +76,7 @@ impl World {
         for obstacle in &self.obstacles {
             match query::contact(&point, &query_ball, &obstacle.1, &obstacle.0, 0.3) {
                 Some(ref contact) if contact.depth > max_depth => {
-                    normal = contact.normal.unwrap();
+                    normal = contact.normal.into_inner();
                     max_depth = contact.depth;
                 },
                 _ => {}

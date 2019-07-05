@@ -1,17 +1,17 @@
 [package]
 name = "tracking"
-version = "0.4.0"
+version = "0.5.0"
 authors = ["Michael Chesser"]
 
 [dependencies]
-nalgebra = { version = "0.16", features = ["serde-serialize"] }
-nalgebra-glm = "0.1"
-ncollide2d = "0.17"
-particle_filter = { git = "https://github.com/mchesser/particle_filter" }
-probability = "0.15"
-rand = "0.5"
-rayon = "1"
-serde = "1"
-serde_derive = "1"
-serde_json = "1"
+nalgebra = { version = "0.18.0", features = ["serde-serialize"] }
+nalgebra-glm = "0.4.0"
+ncollide2d = "0.19.2"
+particle_filter = { git = "https://github.com/mchesser/particle_filter", rev = "77cb4ac3017858f4a4013bf9a7e42d80b88a7f43" }
+probability = "0.16.0"
+rand = "0.6.5"
+rayon = "1.1.0"
+serde = "1.0.94"
+serde_derive = "1.0.94"
+serde_json = "1.0.40"
 streaming-stats = "0.2.2"

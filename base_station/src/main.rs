@@ -1,5 +1,3 @@
-#![feature(nll)]
-
 #[macro_use] extern crate crossbeam_channel;
 extern crate env_logger;
 extern crate hex;
@@ -26,8 +24,8 @@ fn configure_logger(config: &str) {
     builder.target(env_logger::Target::Stdout);
 
     match env::var("BASE_STATION_LOG") {
-        Ok(var) => builder.parse(&var),
-        Err(_) => builder.parse(config),
+        Ok(var) => builder.parse_filters(&var),
+        Err(_) => builder.parse_filters(config),
     };
 
     builder.init();

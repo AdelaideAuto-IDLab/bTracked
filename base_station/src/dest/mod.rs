@@ -17,16 +17,16 @@ pub fn new_destination(
     match config {
         config::MeasurementDestination::Http { config, retry_attempts, queue_rate_ms } => {
             let dest = http::HttpDestination::new(config, retry_attempts, queue_rate_ms)?;
-            Ok(Box::new(dest) as Box<Destination>)
+            Ok(Box::new(dest) as Box<dyn Destination>)
         },
-        config::MeasurementDestination::WebSocket { endpoint } => {
+        config::MeasurementDestination::WebSocket { endpoint: _endpoint } => {
             unimplemented!()
         },
         config::MeasurementDestination::File { path, append } => {
-            Ok(Box::new(FileDestination::new(path, append)?) as Box<Destination>)
+            Ok(Box::new(FileDestination::new(path, append)?) as Box<dyn Destination>)
         },
         config::MeasurementDestination::Stdout => {
-            Ok(Box::new(StdoutDestination) as Box<Destination>)
+            Ok(Box::new(StdoutDestination) as Box<dyn Destination>)
         },
     }
 }

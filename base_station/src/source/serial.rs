@@ -77,7 +77,7 @@ impl SerialReader {
                 let parser = &mut self.parser;
                 if let Some(packet) = self.decoder.next(byte).and_then(|p| parser.parse_packet(p)) {
                     select! {
-                        send(output, packet) => {},
+                        send(output, packet) -> _ => {},
                         default => {
                             warn!("Packet receiver not ready, dropping packet");
                         }

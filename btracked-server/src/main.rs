@@ -1,7 +1,3 @@
-#![allow(proc_macro_derive_resolution_fallback)]
-#![feature(nll, plugin, custom_attribute)]
-#![feature(await_macro)]
-
 extern crate actix;
 extern crate actix_web;
 #[macro_use]
@@ -48,8 +44,8 @@ fn configure_logger() {
     builder.target(env_logger::Target::Stdout);
 
     match env::var("LOG") {
-        Ok(var) => builder.parse(&var),
-        Err(_) => builder.parse("warn"),
+        Ok(var) => builder.parse_filters(&var),
+        Err(_) => builder.parse_filters("warn"),
     };
 
     builder.init();

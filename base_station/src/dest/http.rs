@@ -26,7 +26,7 @@ impl HttpDestination {
 
 impl Destination for HttpDestination {
     fn new_measurement(&mut self, measurement: &BeaconPacket) -> Result<(), Box<dyn Error>> {
-        self.measurement_tx.send(measurement.clone());
+        self.measurement_tx.send(measurement.clone())?;
         Ok(())
     }
 }
@@ -84,12 +84,12 @@ impl HttpSender {
         let tick = channel::tick(Duration::from_millis(queue_rate_ms));
         loop {
             select! {
-                recv(self.measurement_rx, msg) => match msg {
-                    Some(m) => self.measurement_buffer.push(m),
-                    None => break,
+                recv(self.measurement_rx) -> msg => match msg {
+                    Ok(m) => self.measurement_buffer.push(m),
+                    Err(_) => break,
                 },
 
-                recv(tick) => {
+                recv(tick) -> _ => {
                     if let Err(e) = self.try_send() {
                         error!("Error sending measurement: {}", e);
                     }

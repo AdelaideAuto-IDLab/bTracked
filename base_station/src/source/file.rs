@@ -32,7 +32,7 @@ fn read_packets(
         match loader.next()? {
             Some(packet) => {
                 select! {
-                    send(output, packet) => {},
+                    send(output, packet) -> _ => {},
                     default => {
                         warn!("Packet receiver not ready, dropping packet");
                     }
