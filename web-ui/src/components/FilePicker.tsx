@@ -13,8 +13,6 @@ interface FilePickerProps extends ButtonProps {
 }
 
 class FilePicker extends React.Component<FilePickerProps, {}> {
-    private nativeElement: HTMLInputElement | null;
-
     public render() {
         return (
             <>
@@ -23,7 +21,6 @@ class FilePicker extends React.Component<FilePickerProps, {}> {
                     multiple={false}
                     type="file"
                     style={inputStyle}
-                    ref={input => this.nativeElement = input}
                     onChange={this.inputChanged}
                 />
                 <label htmlFor="button-file">
