@@ -251,7 +251,7 @@ interface MeasurementViewerProps {
 }
 
 class MeasurementViewer extends React.Component<MeasurementViewerProps, {}> {
-    private canvas: HTMLCanvasElement | null;
+    private canvas: HTMLCanvasElement | null = null;
 
     public render() {
         return (

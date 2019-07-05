@@ -23,7 +23,7 @@ interface MapEditorProps {
 
 export default class MapEditor extends React.Component<MapEditorProps, {}> {
     public mapManager: MapManager;
-    private viewer: MapViewer | null;
+    private viewer: MapViewer | null = null;
     private modes: { [name: string]: ModeBuilder };
 
     constructor(props: MapEditorProps) {

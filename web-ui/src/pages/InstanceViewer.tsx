@@ -4,7 +4,7 @@ import { Button, Card, CardContent, CardHeader, Divider, Grid, LinearProgress, T
 
 import { MapInstance } from '../components';
 
-import { distanceSqr } from 'src/utils';
+import { distanceSqr } from '../utils';
 import { InstanceDetails, ParticleState, UpdateMessage, } from '../model';
 import Api from '../services/Api';
 
@@ -27,7 +27,7 @@ interface ViewerState {
 class Viewer extends React.Component<{ match: any }, ViewerState> {
     private api = new Api();
 
-    private viewer: MapInstance | null;
+    private viewer: MapInstance | null = null;
     private updateWebSocket: WebSocket | null = null;
     private reconnectHandle: number | null = null;
 

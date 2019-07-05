@@ -53,10 +53,10 @@ interface MapViewerProps {
 export default class MapViewer extends React.Component<MapViewerProps, {}> {
     public renderer: MapRenderer = new MapRenderer();
 
-    private bgCanvas: HTMLCanvasElement | null;
-    private mainCanvas: HTMLCanvasElement | null;
-    private particleCanvas: HTMLCanvasElement | null;
-    private uiCanvas: HTMLCanvasElement | null;
+    private bgCanvas: HTMLCanvasElement | null = null;
+    private mainCanvas: HTMLCanvasElement | null = null;
+    private particleCanvas: HTMLCanvasElement | null = null;
+    private uiCanvas: HTMLCanvasElement | null = null;
 
     private currentMouse: Point = [0, 0];
     private mouseInCanvas: boolean = false;
@@ -233,7 +233,7 @@ interface SimpleMapViewerProps {
 }
 
 export class SimpleMapViewer extends React.Component<SimpleMapViewerProps, {}> {
-    private viewer: MapViewer | null;
+    private viewer: MapViewer | null = null;
 
     constructor(props: SimpleMapViewerProps) {
         super(props);

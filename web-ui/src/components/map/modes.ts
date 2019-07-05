@@ -40,7 +40,7 @@ export abstract class Mode {
 export class NoneMode extends Mode {}
 
 export class EditWallMode extends Mode {
-    private selectedPoint: Point | null;
+    private selectedPoint: Point | null = null;
 
     constructor(protected viewer: MapViewer, private mapManager: MapManager) {
         super();
@@ -88,7 +88,7 @@ export class EditWallMode extends Mode {
 }
 
 export class AddBeaconMode extends Mode {
-    private selectedPoint: Point | null;
+    private selectedPoint: Point | null = null;
 
     constructor(protected viewer: MapViewer, private mapManager: MapManager) {
         super();
@@ -153,7 +153,7 @@ export class AddBeaconMode extends Mode {
 }
 
 export class SetScale extends Mode {
-    private selectedPoint: Point | null;
+    private selectedPoint: Point | null = null;
 
     constructor(protected viewer: MapViewer, private mapManager: MapManager) {
         super();
@@ -206,7 +206,7 @@ export class SetScale extends Mode {
 }
 
 abstract class SetRect extends Mode {
-    private selectedPoint: Point | null;
+    private selectedPoint: Point | null = null;
 
     constructor(protected viewer: MapViewer, protected mapManager: MapManager) {
         super();

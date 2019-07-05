@@ -1,4 +1,4 @@
-import { MapData } from 'src/model';
+import { MapData } from '../model';
 
 export function updateMap(data: MapData) {
     if (data.version == null) {

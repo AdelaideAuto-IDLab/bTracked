@@ -14,7 +14,7 @@ interface MapInstanceProps {
 }
 
 export default class MapInstance extends React.Component<MapInstanceProps, {}> {
-    private viewer: MapViewer | null;
+    private viewer: MapViewer | null = null;
 
     private particles: ParticleSnapshot = { stationary: [], moving: [] };
 

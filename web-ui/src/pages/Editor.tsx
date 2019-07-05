@@ -34,7 +34,7 @@ interface BeaconData {
 }
 
 class Editor extends React.Component<{}, EditorState> {
-    private mapEditor: MapEditor | null;
+    private mapEditor: MapEditor | null = null;
     private collisionMapLoading = false;
 
     constructor(props: {}) {
