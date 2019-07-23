@@ -62,7 +62,7 @@ class Viewer extends React.Component<{ match: any }, ViewerState> {
         const mapData = config.tracking.geometry;
 
         return (
-            <Grid container={true} spacing={24}>
+            <Grid container={true} spacing={10}>
                 <Grid item={true}>
                     <MapInstance
                         ref={viewer => this.viewer = viewer}

@@ -3,7 +3,7 @@ import * as React from 'react';
 import { Button, Select } from '@material-ui/core';
 
 interface SelectWithButtonProps {
-    onChange?: (event: React.ChangeEvent<HTMLSelectElement>, child: React.ReactNode) => void;
+    onChange?: (event: React.ChangeEvent<{ name?: string | undefined, value: unknown }>, child: React.ReactNode) => void;
     onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
     value?: Array<string | number | boolean> | string | number | boolean;
     children?: React.ReactNode;

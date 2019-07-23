@@ -89,10 +89,10 @@ export default class Calibration extends React.Component<{}, CalibrationState> {
                 return (
                     <TableRow key={entry[0]} hover={true} selected={selected} onClick={setSelected}>
                         <TableCell>{entry[0]}</TableCell>
-                        <TableCell numeric={true}>{entry[1].latestRssi}</TableCell>
-                        <TableCell numeric={true}>{entry[1].count}</TableCell>
-                        <TableCell numeric={true}>{(entry[1].count / dt).toFixed(4)}</TableCell>
-                        <TableCell numeric={true}>{entry[1].currentReadRate}</TableCell>
+                        <TableCell>{entry[1].latestRssi}</TableCell>
+                        <TableCell>{entry[1].count}</TableCell>
+                        <TableCell>{(entry[1].count / dt).toFixed(4)}</TableCell>
+                        <TableCell>{entry[1].currentReadRate}</TableCell>
                         <TableCell style={{ width: 50 }}>
                             <IconButton onClick={resetFirstSeen}><RefreshIcon /></IconButton>
                         </TableCell>
@@ -101,14 +101,14 @@ export default class Calibration extends React.Component<{}, CalibrationState> {
             });
 
             return (
-                <Table padding="dense">
+                <Table padding="none">
                     <TableHead>
                         <TableRow>
                             <TableCell>MAC</TableCell>
-                            <TableCell numeric={true}>Rssi</TableCell>
-                            <TableCell numeric={true}>Count</TableCell>
-                            <TableCell numeric={true}>Avg Read Rate</TableCell>
-                            <TableCell numeric={true}>Current Read Rate</TableCell>
+                            <TableCell>Rssi</TableCell>
+                            <TableCell>Count</TableCell>
+                            <TableCell>Avg Read Rate</TableCell>
+                            <TableCell>Current Read Rate</TableCell>
                             <TableCell style={{ width: 50 }} />
                         </TableRow>
                     </TableHead>
@@ -120,7 +120,7 @@ export default class Calibration extends React.Component<{}, CalibrationState> {
         };
 
         return (
-            <Grid container={true} spacing={24}>
+            <Grid container={true} spacing={10}>
                 <Grid item={true} xs={3}>
                     <Card>
                         <CardHeader title="Active instances" />

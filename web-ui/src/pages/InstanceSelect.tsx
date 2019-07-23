@@ -80,7 +80,7 @@ class InstanceSelect extends React.Component<{}, InstanceSelectState> {
 
             return (
                 <Paper style={{ margin: 10, padding: 10, textAlign: 'center' }}>
-                    <Typography variant="subheading">{this.state.mapKey}</Typography>
+                    <Typography variant="subtitle1">{this.state.mapKey}</Typography>
                     <SimpleMapViewer mapData={this.state.selectedMap} width={300} height={300} />
                     <Button variant="outlined" style={{ marginTop: 10 }} onClick={this.startInstance}>
                         Start Instance
@@ -96,7 +96,7 @@ class InstanceSelect extends React.Component<{}, InstanceSelectState> {
         );
 
         return (
-            <Grid container={true} spacing={24}>
+            <Grid container={true} spacing={10}>
                 <Grid item={true} xs={3}>
                     <Card>
                         <CardHeader title="Active instances" />
@@ -144,7 +144,7 @@ class InstanceSelect extends React.Component<{}, InstanceSelectState> {
 
                         <Divider />
 
-                        <Grid container={true} spacing={24} style={{flexGrow: 1}}>
+                        <Grid container={true} spacing={10} style={{flexGrow: 1}}>
                             <Grid item={true} xs="auto" style={{flexGrow: 1}}>
                                 <MapList />
                             </Grid>

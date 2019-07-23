@@ -56,7 +56,7 @@ class Editor extends React.Component<{}, EditorState> {
 
     public render() {
         return (
-            <Grid container={true} spacing={24}>
+            <Grid container={true} spacing={10}>
                 <Grid item={true}>
                     <MapEditor
                         ref={mapEditor => this.mapEditor = mapEditor}
@@ -147,7 +147,7 @@ class Editor extends React.Component<{}, EditorState> {
                 <Divider />
 
                 <CardContent>
-                    <Typography variant="subheading">Editor mode</Typography>
+                    <Typography variant="subtitle1">Editor mode</Typography>
                     <RadioGroup value={this.state.mode} onChange={this.handleChange('mode')}>
                         <FormControlLabel value="editWalls" control={<Radio />} label="Edit walls" />
                         <FormControlLabel value="editObstacles" control={<Radio />} label="Edit obstacles" />
@@ -199,8 +199,8 @@ class Editor extends React.Component<{}, EditorState> {
             return (
                 <TableRow key={beacon.id}>
                     <TableCell><TextField style={{ width: 80 }} value={beacon.id} /></TableCell>
-                    <TableCell numeric={true}>{beacon.info.position[0]}</TableCell>
-                    <TableCell numeric={true}>{beacon.info.position[1]}</TableCell>
+                    <TableCell>{beacon.info.position[0]}</TableCell>
+                    <TableCell>{beacon.info.position[1]}</TableCell>
                     <TableCell><IconButton onClick={deleteBeacon}><DeleteIcon /></IconButton></TableCell>
                 </TableRow>
             )
@@ -211,12 +211,12 @@ class Editor extends React.Component<{}, EditorState> {
                 <CardHeader title="Beacons" />
                 <Divider />
 
-                <Table padding="dense" cellSpacing={5}>
+                <Table padding="none" cellSpacing={5}>
                     <TableHead>
                         <TableRow>
                             <TableCell>Name</TableCell>
-                            <TableCell style={{ width: 15 }} numeric={true}>x</TableCell>
-                            <TableCell style={{ width: 15 }} numeric={true}>y</TableCell>
+                            <TableCell style={{ width: 15 }}>x</TableCell>
+                            <TableCell style={{ width: 15 }}>y</TableCell>
                             <TableCell>Actions</TableCell>
                         </TableRow>
                     </TableHead>
